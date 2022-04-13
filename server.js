@@ -18,13 +18,13 @@ const io = socketIo(server, {
 
 // set up the socket connection
 io.on('connection', (socket) => {
-    // console.log('a user connected!', socket.id);
+    // emitting the socket id to the client
     socket.emit("userSocket", socket.id);
 
-    // console the disconnection for testing
-    socket.on('disconnection', () => {
-        console.log('A user disconnected :sad_panda:');
-    });
+    // receiving the user's name 
+    socket.on('player', player => {
+        console.log('a user connected!', player);
+    })
 });
 
 // listen for changes on app's port
