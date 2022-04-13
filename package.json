@@ -1,0 +1,26 @@
+{
+  "name": "spades-api",
+  "version": "1.0.0",
+  "description": "the server and sockets for spades gameplay",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wadestewart/spades-api.git"
+  },
+  "author": "waders",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wadestewart/spades-api/issues"
+  },
+  "homepage": "https://github.com/wadestewart/spades-api#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "socket.io": "^4.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
