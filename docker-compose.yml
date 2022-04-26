@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  nodejs:
+    container_name: spades-api
+    build: .
+    ports:
+      - "3050:3050"
+    volumes:
+      - .:/src
+      - /src/node_modules
+    command: /src/node_modules/.bin/nodemon server.js
