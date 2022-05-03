@@ -26,9 +26,15 @@ io.on('connection', (socket) => {
     socket.emit('userSocket', socket.id);
 
     // receiving the player object, and pushing it into the players array
-    socket.on('player', (player, callback) => {
-        // push the new player into the
-        players.push(player);
+    socket.on('player', player => {
+        const existingNameValues = [];
+        players.forEach(player => {
+            existingNameValues.push(player.name);
+        });
+        // push the new player into the if it doesn't already exist
+        if (!existingNameValues.includes(player.name) && players.length <= 3) {
+            players.push(player);
+        }
         io.emit('players', players);
     })
 });
