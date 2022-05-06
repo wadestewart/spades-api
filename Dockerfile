@@ -1,8 +1,8 @@
-FROM node:16
+FROM arm32v6/node:16.14-alpine
 
 # Create app directory
 WORKDIR /src
-
+ENV REACT_APP_SPADES_CLIENT=
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
